@@ -349,8 +349,8 @@ function selectGithubStudyCommitData_ (githubUserId, oldestTS, latestTS) {
   const messages = getMessageAtSlack_(ESM_FD_TOKEN, NOTIFY_MODERN_STUDY_CHANNEL_ID, oldestTS, latestTS)
 
   // messageがない場合は処理終了
-  if (!messages.length) {
-    return
+  if (!messages?.length) {
+    return { num: 0 }
   }
 
   // GitHubアクティビティのカウント数を返す
@@ -370,8 +370,8 @@ function selectStudyChannelPostData_ (slackUserId, oldestTS, latestTS) {
   const messages = getMessageAtSlack_(ESM_FD_TOKEN, TEAM_MODERN_STUDY_CHANNEL_ID, oldestTS, latestTS)
   
   // messageがない場合は処理終了
-  if (!messages.length) {
-    return
+  if (!messages?.length) {
+    return { num: 0 }
   }
 
   // 取得したメッセージ情報にスレッド情報も加える
@@ -395,8 +395,8 @@ function selectGithubReportPostData_ (githubUserId, oldestTS, latestTS) {
   const messages = getMessageAtSlack_(ESM_FD_TOKEN, NOTIFY_MODERN_DX_CHANNEL_ID, oldestTS, latestTS)
 
   // messageがない場合は処理終了
-  if (!messages.length) {
-    return
+  if (!messages?.length) {
+    return { num: 0 }
   }
 
   // GitHubアクティビティのカウント数を返す
