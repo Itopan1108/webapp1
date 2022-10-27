@@ -16,7 +16,7 @@ const NOTIFY_MODERN_STUDY_CHANNEL_ID = "C042NE3A2NS"
 const TEAM_MODERN_STUDY_CHANNEL_ID = "C042V2TBNTC"
 const NOTIFY_MODERN_DX_CHANNEL_ID = "C042V2T9GLA"
 // メッセージ投稿情報
-const POST_URL = 'https://hooks.slack.com/services/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'
+const POST_URL = 'https://hooks.slack.com/services/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'
 
 /**
  * スプレッドシートを開いた時に起動する関数

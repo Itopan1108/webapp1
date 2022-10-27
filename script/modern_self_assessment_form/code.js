@@ -4,7 +4,7 @@ const FORM_SHEET_NAME = 'フォームの回答 1'
 const SETTING_SHEET_NAME = '環境設定シート'
 
 // メッセージ投稿情報
-const POST_URL = 'https://hooks.slack.com/services/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' // 本番用（#team-fd-modern-study）
+const POST_URL = 'https://hooks.slack.com/services/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' // 本番用（#team-fd-modern-study）
 // const POST_URL = 'https://hooks.slack.com/services/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' // テスト用（マイチャンネル）
 
 /**
