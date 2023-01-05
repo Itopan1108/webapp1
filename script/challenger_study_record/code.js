@@ -34,7 +34,7 @@ function onOpen () {
  * トリガーで実行する関数
  * 全てのチャレンジャーシートの該当日付データに集計したデータを貼り付ける
  */
-function updateChallengerRecordTrigger () {
+export function updateChallengerRecordTrigger () {
   try {
     // 環境設定シートからデータを取得する
     const challengerData = selectChallengerData_()
