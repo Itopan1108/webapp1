@@ -1,4 +1,4 @@
-import slack from './slack'
+import * as slack from './slack'
 
 // 参照しているシート名
 const REFERENCE_SHEET = {
@@ -18,7 +18,8 @@ const NOTIFY_MODERN_STUDY_CHANNEL_ID = "C042NE3A2NS"
 const TEAM_MODERN_STUDY_CHANNEL_ID = "C042V2TBNTC"
 const NOTIFY_MODERN_DX_CHANNEL_ID = "C042V2T9GLA"
 // メッセージ投稿情報
-const POST_URL = 'https://hooks.slack.com/services/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'
+// const POST_URL = 'https://hooks.slack.com/services/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'
+const POST_URL = 'https://hooks.slack.com/services/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' // テスト用（マイチャンネル）
 
 /**
  * スプレッドシートを開いた時に起動する関数
@@ -42,7 +43,7 @@ export function updateChallengerRecordTrigger () {
     const challengerData = selectChallengerData_()
 
     // challengerDataを元に各チャレンジャーごとにシートを更新する
-    for (challenger of challengerData) {
+    for (const challenger of challengerData) {
       // 更新対象シートの諸々のデータを取得する
       const updateSheetData = selectUpdateSheetData_(challenger.name)
 
@@ -79,10 +80,10 @@ export function updateChallengerRecordTrigger () {
     message += "\n"
     message += "https://datastudio.google.com/s/rdVaSsI1-8o\n"
     slack.notify(message)
-  } catch {
+  } catch (e) {
     // team_modern_studyチャンネルにエラーメッセージを投稿する
     let message = "チャレンジャーの学習記録を更新しようとしたらエラーが発生したよっ :cry:\n"
-    message += "エラーになったシート名: " + challenger.name
+    message += e
     slack.notify(message)
   }
 }
