@@ -1,3 +1,7 @@
+// メッセージ投稿情報
+// const POST_URL = 'https://hooks.slack.com/services/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'
+const POST_URL = 'https://hooks.slack.com/services/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' // テスト用（マイチャンネル）
+
 /**
  * oldestTS ~ latestTS の範囲のslackメッセージを取得する
  */

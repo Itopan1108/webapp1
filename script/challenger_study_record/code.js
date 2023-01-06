@@ -17,9 +17,6 @@ const ESM_FD_TOKEN = "xoxp-3963306992470-4007513038819-4119166819828-1fcf3632075
 const NOTIFY_MODERN_STUDY_CHANNEL_ID = "C042NE3A2NS"
 const TEAM_MODERN_STUDY_CHANNEL_ID = "C042V2TBNTC"
 const NOTIFY_MODERN_DX_CHANNEL_ID = "C042V2T9GLA"
-// メッセージ投稿情報
-// const POST_URL = 'https://hooks.slack.com/services/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'
-const POST_URL = 'https://hooks.slack.com/services/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' // テスト用（マイチャンネル）
 
 /**
  * スプレッドシートを開いた時に起動する関数
