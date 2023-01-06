@@ -1,3 +1,5 @@
+import slack from './slack'
+
 // 参照しているシート名
 const REFERENCE_SHEET = {
   AS_PLANNED: '計画的な学習達成数まとめ',
@@ -76,12 +78,12 @@ export function updateChallengerRecordTrigger () {
     message += "みんな見てみてね :baby_chick:\n"
     message += "\n"
     message += "https://datastudio.google.com/s/rdVaSsI1-8o\n"
-    notifySlack_(message)
+    slack.notify(message)
   } catch {
     // team_modern_studyチャンネルにエラーメッセージを投稿する
     let message = "チャレンジャーの学習記録を更新しようとしたらエラーが発生したよっ :cry:\n"
     message += "エラーになったシート名: " + challenger.name
-    notifySlack_(message)
+    slack.notify(message)
   }
 }
 
@@ -346,7 +348,7 @@ function selectProgressData_ (myName) {
  */
 function selectGithubStudyCommitData_ (githubUserId, oldestTS, latestTS) {
   // notify_modern_studyのメッセージを取得する
-  const messages = getMessageAtSlack_(ESM_FD_TOKEN, NOTIFY_MODERN_STUDY_CHANNEL_ID, oldestTS, latestTS)
+  const messages = slack.getMessages(ESM_FD_TOKEN, NOTIFY_MODERN_STUDY_CHANNEL_ID, oldestTS, latestTS)
 
   // messageがない場合は処理終了
   if (!messages?.length) {
@@ -367,7 +369,7 @@ function selectGithubStudyCommitData_ (githubUserId, oldestTS, latestTS) {
  */
 function selectStudyChannelPostData_ (slackUserId, oldestTS, latestTS) {
   // team_modern_studyのメッセージを取得する
-  const messages = getMessageAtSlack_(ESM_FD_TOKEN, TEAM_MODERN_STUDY_CHANNEL_ID, oldestTS, latestTS)
+  const messages = slack.getMessages(ESM_FD_TOKEN, TEAM_MODERN_STUDY_CHANNEL_ID, oldestTS, latestTS)
   
   // messageがない場合は処理終了
   if (!messages?.length) {
@@ -377,7 +379,7 @@ function selectStudyChannelPostData_ (slackUserId, oldestTS, latestTS) {
   // 取得したメッセージ情報にスレッド情報も加える
   let messageWithThread = []
   messages.forEach((message) => {
-    const threadMessage = getThreadAtSlack_(ESM_FD_TOKEN, TEAM_MODERN_STUDY_CHANNEL_ID, message.ts)
+    const threadMessage = slack.getThreads(ESM_FD_TOKEN, TEAM_MODERN_STUDY_CHANNEL_ID, message.ts)
     messageWithThread = messageWithThread.concat(threadMessage)
   })
 
@@ -392,7 +394,7 @@ function selectStudyChannelPostData_ (slackUserId, oldestTS, latestTS) {
  */
 function selectGithubReportPostData_ (githubUserId, oldestTS, latestTS) {
   // notify_modern_dxのメッセージを取得する
-  const messages = getMessageAtSlack_(ESM_FD_TOKEN, NOTIFY_MODERN_DX_CHANNEL_ID, oldestTS, latestTS)
+  const messages = slack.getMessages(ESM_FD_TOKEN, NOTIFY_MODERN_DX_CHANNEL_ID, oldestTS, latestTS)
 
   // messageがない場合は処理終了
   if (!messages?.length) {
@@ -407,59 +409,4 @@ function selectGithubReportPostData_ (githubUserId, oldestTS, latestTS) {
       .filter(message => message.attachments?.[0].pretext.includes(githubUserId))
       .length
   }
-}
-
-/**
- * oldestTS ~ latestTS の範囲のslackメッセージを取得する
- */
-function getMessageAtSlack_ (token, channelId, oldestTS, latestTS) {
-  const URL = "https://slack.com/api/conversations.history"
-  const options = {
-    'method': 'post',
-    'payload': {
-      "token": token,
-      "channel": channelId,
-      "oldest": oldestTS,
-      "latest": latestTS,
-      "limit": "1000"
-    }
-  }
-  
-  // 投稿データを取得
-  const response = UrlFetchApp.fetch(URL, options)
-  return JSON.parse(response).messages
-}
-
-/**
- * 指定されたtsに紐づくスレッド情報を取得する
- */
-function getThreadAtSlack_ (token, channelId, ts) {
-  const URL = "https://slack.com/api/conversations.replies"
-  const options = {
-    'method': 'post',
-    'payload': {
-      "token": token,
-      "channel": channelId,
-      "ts": ts
-    }
-  }
-  
-  // 投稿データを取得
-  const response = UrlFetchApp.fetch(URL, options)
-  return JSON.parse(response).messages
-}
-
-/**
- * Slackにメッセージを送信する
- */
-function notifySlack_ (message) {
-    const options = {
-      "method": "post",
-      "contentType": "application/json",
-      "payload": JSON.stringify({
-        "text": message
-      })
-    }
-
-    UrlFetchApp.fetch(POST_URL, options)
 }
