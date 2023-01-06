@@ -22,7 +22,7 @@ const POST_URL = 'https://hooks.slack.com/services/T03UB90V6DU/B0489NZ42BC/LMaSe
  * スプレッドシートを開いた時に起動する関数
  * カスタムメニューを追加する
  */
-function onOpen () {
+export function onOpen () {
   SpreadsheetApp
     .getActiveSpreadsheet()
     .addMenu("カスタムメニュー", [
@@ -89,7 +89,7 @@ export function updateChallengerRecordTrigger () {
  * スプレッドシートを開いて実行する関数
  * 1つのチャレンジャーシートの該当日付データに集計したデータを貼り付ける
  */
-function updateChallengerRecordOperation() {
+export function updateChallengerRecordOperation() {
   // 環境設定シートからデータを取得する
   const challengerData = selectChallengerData_()
 
@@ -462,11 +462,4 @@ function notifySlack_ (message) {
     }
 
     UrlFetchApp.fetch(POST_URL, options)
-}
-
-/**
- * シート名を取得する（スプレッドシートのセル内で使用する関数）
- */
-function sheetName() {
-  return SpreadsheetApp.getActiveSheet().getName();
 }
