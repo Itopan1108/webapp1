@@ -4,8 +4,9 @@
   "description": "チャレンジャー学習記録を更新するスクリプト",
   "main": "code.js",
   "scripts": {
+    "deploy": "npm run build && npm run push",
     "build": "webpack --mode production",
-    "deploy": "clasp push"
+    "push": "clasp push"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^11.0.0",
