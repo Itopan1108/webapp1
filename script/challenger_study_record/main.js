@@ -2,7 +2,7 @@ import {
   onOpen,
   updateChallengerRecordTrigger,
   updateChallengerRecordOperation
-} from './code'
+} from './src/code'
 
 global.onOpen = onOpen
 global.updateChallengerRecordTrigger = updateChallengerRecordTrigger
