@@ -12,7 +12,7 @@ import {
  * スプレッドシートを開いて実行する関数
  * 1つのチャレンジャーシートの該当日付データに集計したデータを貼り付ける
  */
-export default function updateChallengerRecordOperation() {
+export default function updateChallengerRecordOperation () {
   // 環境設定シートからデータを取得する
   const challengerData = selectChallengerData()
 

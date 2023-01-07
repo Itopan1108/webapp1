@@ -4,7 +4,7 @@ import { SLACK_INFO } from "../common/constants"
 /**
  * notify_modern_studyチャンネルからチャレンジャー名に紐づくGitHubログ数を取得する
  */
-export function selectGithubStudyCommitData(githubUserId, oldestTS, latestTS) {
+export function selectGithubStudyCommitData (githubUserId, oldestTS, latestTS) {
   const token = SLACK_INFO.ESM_FD_TOKEN
   const channelId = SLACK_INFO.NOTIFY_MODERN_STUDY_CHANNEL_ID
 

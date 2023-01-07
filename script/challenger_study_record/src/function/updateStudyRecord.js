@@ -56,7 +56,7 @@ export function updateChallengerRecord ({ name, githubUserId, slackUserId, lastT
 /**
  * Webアプリ開発2の更新対象シートを更新する
  */
-export function updateWebapp2Record({ name, thisTimeRange }) {
+export function updateWebapp2Record ({ name, thisTimeRange }) {
   // 各種シートからチャレンジャー名に紐づくデータを取得する
   const webapp2StatusData = selectWebapp2Status(name)
 

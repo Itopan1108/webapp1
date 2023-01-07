@@ -55,7 +55,7 @@ export function selectUpdateSheetData (name) {
 /**
  * Webアプリ開発2の更新対象シートの諸々のデータを取得する
  */
-export function selectUpdateWebapp2SheetData(name) {
+export function selectUpdateWebapp2SheetData (name) {
   // 開いているシートとシート名を取得する
   const mySheet = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(`${name}_Web2`)
   const mySheetValues = mySheet.getDataRange().getValues()
