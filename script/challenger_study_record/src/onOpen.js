@@ -2,7 +2,7 @@
  * スプレッドシートを開いた時に起動する関数
  * カスタムメニューを追加する
  */
-export function onOpen () {
+export default function onOpen () {
   SpreadsheetApp
     .getActiveSpreadsheet()
     .addMenu("カスタムメニュー", [

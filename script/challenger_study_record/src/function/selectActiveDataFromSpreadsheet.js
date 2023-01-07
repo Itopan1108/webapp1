@@ -1,4 +1,4 @@
-import { REFERENCE_SHEET } from "./constants"
+import { REFERENCE_SHEET } from "../common/constants"
 
 /**
  * 計画的な学習達成数まとめシートから指定されたチャレンジャー名に紐づくデータを取得する

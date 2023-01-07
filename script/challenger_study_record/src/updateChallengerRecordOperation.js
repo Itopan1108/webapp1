@@ -2,17 +2,17 @@ import {
   selectChallengerData,
   selectUpdateSheetData,
   selectUpdateWebapp2SheetData
-} from './selectSettingDataFromSpreadsheet'
+} from './function/selectSettingDataFromSpreadsheet'
 import {
   updateChallengerRecord,
   updateWebapp2Record
-} from './updateStudyRecord'
+} from './function/updateStudyRecord'
 
 /**
  * スプレッドシートを開いて実行する関数
  * 1つのチャレンジャーシートの該当日付データに集計したデータを貼り付ける
  */
-export function updateChallengerRecordOperation() {
+export default function updateChallengerRecordOperation() {
   // 環境設定シートからデータを取得する
   const challengerData = selectChallengerData()
 

@@ -1,4 +1,4 @@
-import { REFERENCE_SHEET } from "./constants"
+import { REFERENCE_SHEET } from "../common/constants"
 
 /**
  * 環境設定シートのデータを取得する

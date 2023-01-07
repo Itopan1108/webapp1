@@ -1,19 +1,19 @@
-import * as slack from './slack'
+import * as slack from './common/slack'
 import {
   selectChallengerData,
   selectUpdateSheetData,
   selectUpdateWebapp2SheetData
-} from './selectSettingDataFromSpreadsheet'
+} from './function/selectSettingDataFromSpreadsheet'
 import {
   updateChallengerRecord,
   updateWebapp2Record
-} from './updateStudyRecord'
+} from './function/updateStudyRecord'
 
 /**
  * トリガーで実行する関数
  * 全てのチャレンジャーシートの該当日付データに集計したデータを貼り付ける
  */
-export function updateChallengerRecordTrigger () {
+export default function updateChallengerRecordTrigger () {
   try {
     // 環境設定シートからデータを取得する
     const challengerData = selectChallengerData()

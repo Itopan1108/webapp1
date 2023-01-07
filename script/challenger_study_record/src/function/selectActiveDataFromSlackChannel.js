@@ -1,5 +1,5 @@
-import * as slack from './slack'
-import { SLACK_INFO } from './constants'
+import * as slack from '../common/slack'
+import { SLACK_INFO } from '../common/constants'
 
 /**
  * notify_modern_studyチャンネルからチャレンジャー名に紐づくGitHubログ数を取得する
