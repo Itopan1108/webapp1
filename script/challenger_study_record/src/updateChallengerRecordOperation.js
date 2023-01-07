@@ -2,11 +2,11 @@ import {
   selectChallengerData,
   selectUpdateSheetData,
   selectUpdateWebapp2SheetData
-} from './function/selectSettingDataFromSpreadsheet'
+} from "./function/selectSettingDataFromSpreadsheet"
 import {
   updateChallengerRecord,
   updateWebapp2Record
-} from './function/updateStudyRecord'
+} from "./function/updateStudyRecord"
 
 /**
  * スプレッドシートを開いて実行する関数
@@ -21,23 +21,23 @@ export default function updateChallengerRecordOperation() {
 
   // 開いているシートが各チャレンジャーシート以外の場合は処理を終了する
   if (!challengerData.some(challennger => challennger.name === updateSheetData.name)) {
-    Browser.msgBox('このシートでは実行できません。\\n各チャレンジャーシートで実行してください。')
+    Browser.msgBox("このシートでは実行できません。\\n各チャレンジャーシートで実行してください。")
     return
   }
 
   // 更新対象の確認ダイアログを表示する
   const updateDate = Utilities.formatDate(updateSheetData.thisTimeDate, "JST", "yyyy/MM/dd")
-  if (Browser.msgBox(`${updateDate} 分のデータを更新しますが、更新対象合ってますか？`, Browser.Buttons.OK_CANCEL) === 'cancel') {
+  if (Browser.msgBox(`${updateDate} 分のデータを更新しますが、更新対象合ってますか？`, Browser.Buttons.OK_CANCEL) === "cancel") {
     return
   }
 
   // 更新する範囲にすでに値が入っていないか事前チェックする
   const alreadySetValueNum = updateSheetData.thisTimeRange.getValues()[0].reduce((pre, cur) => {
-    cur !== '' && pre++
+    cur !== "" && pre++
     return pre
   }, 0)
   if (alreadySetValueNum > 0) {
-    Browser.msgBox('すでに何か値が設定されていそうなので、\\n更新したいならB列からN列は未入力状態にしてください。')
+    Browser.msgBox("すでに何か値が設定されていそうなので、\\n更新したいならB列からN列は未入力状態にしてください。")
     return
   }
 

@@ -6,7 +6,7 @@ module.exports = {
   entry: "./main.js",
   output: {
     path: __dirname ,
-    filename: './dist/Code.gs'
+    filename: "./dist/Code.gs"
   },
   plugins: [
     new GasPlugin(),

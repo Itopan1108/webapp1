@@ -7,7 +7,7 @@ export function selectAsPlannedData (myName) {
   const asPlannedSheetValues = SpreadsheetApp.getActiveSpreadsheet().getSheetByName(REFERENCE_SHEET.AS_PLANNED).getDataRange().getValues()
   const myData = asPlannedSheetValues.filter(row => row[0] === myName)
   return {
-    studyPlanning: myData[0][9] // '平均ポイント'
+    studyPlanning: myData[0][9] // 平均ポイント
   }
 }
 

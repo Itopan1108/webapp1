@@ -1,13 +1,13 @@
-import * as slack from './common/slack'
+import * as slack from "./common/slack"
 import {
   selectChallengerData,
   selectUpdateSheetData,
   selectUpdateWebapp2SheetData
-} from './function/selectSettingDataFromSpreadsheet'
+} from "./function/selectSettingDataFromSpreadsheet"
 import {
   updateChallengerRecord,
   updateWebapp2Record
-} from './function/updateStudyRecord'
+} from "./function/updateStudyRecord"
 
 /**
  * トリガーで実行する関数
@@ -30,7 +30,7 @@ export default function updateChallengerRecordTrigger () {
 
       // 更新する範囲にすでに値が入っていないか事前チェックする
       const alreadySetValueNum = updateSheetData.thisTimeRange.getValues()[0].reduce((pre, cur) => {
-        cur !== '' && pre++
+        cur !== "" && pre++
         return pre
       }, 0)
       if (alreadySetValueNum > 0) {

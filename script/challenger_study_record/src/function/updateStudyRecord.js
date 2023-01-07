@@ -5,12 +5,12 @@ import {
   selectProgressData,
   selectProgressVolumeData,
   selectWebapp2Status
-} from './selectActiveDataFromSpreadsheet'
+} from "./selectActiveDataFromSpreadsheet"
 import {
   selectGithubStudyCommitData,
   selectStudyChannelPostData,
   selectGithubReportPostData
-} from './selectActiveDataFromSlackChannel'
+} from "./selectActiveDataFromSlackChannel"
 
 /**
  * 更新対象シートを更新する

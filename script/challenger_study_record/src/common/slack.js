@@ -1,4 +1,4 @@
-import { SLACK_INFO } from './constants'
+import { SLACK_INFO } from "./constants"
 
 /**
  * oldestTS ~ latestTS の範囲のslackメッセージを取得する
@@ -6,8 +6,8 @@ import { SLACK_INFO } from './constants'
 export function getMessages (token, channelId, oldestTS, latestTS) {
   const URL = "https://slack.com/api/conversations.history"
   const options = {
-    'method': 'post',
-    'payload': {
+    "method": "post",
+    "payload": {
       "token": token,
       "channel": channelId,
       "oldest": oldestTS,
@@ -27,8 +27,8 @@ export function getMessages (token, channelId, oldestTS, latestTS) {
 export function getThreads (token, channelId, ts) {
   const URL = "https://slack.com/api/conversations.replies"
   const options = {
-    'method': 'post',
-    'payload': {
+    "method": "post",
+    "payload": {
       "token": token,
       "channel": channelId,
       "ts": ts
