@@ -24,7 +24,7 @@ export default function updateChallengerRecordTrigger () {
       const updateSheetData = selectUpdateSheetData(challenger.name)
 
       // 開いているシートが各チャレンジャーシート以外の場合は処理を終了する
-      if (!challengerData.some(challennger => challennger.name === updateSheetData.name)) {
+      if (!challengerData.some(challenger => challenger.name === updateSheetData.name)) {
         throw new Error(`チャレンジャーシート以外のシートで処理が実行されました シート名: ${challenger.name}`)
       }
 

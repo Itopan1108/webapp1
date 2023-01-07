@@ -20,7 +20,7 @@ export default function updateChallengerRecordOperation() {
   const updateSheetData = selectUpdateSheetData(SpreadsheetApp.getActiveSheet().getName())
 
   // 開いているシートが各チャレンジャーシート以外の場合は処理を終了する
-  if (!challengerData.some(challennger => challennger.name === updateSheetData.name)) {
+  if (!challengerData.some(challenger => challenger.name === updateSheetData.name)) {
     Browser.msgBox("このシートでは実行できません。\\n各チャレンジャーシートで実行してください。")
     return
   }
