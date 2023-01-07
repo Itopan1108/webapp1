@@ -1,4 +1,4 @@
-import { POST_URL } from './constants'
+import { SLACK_INFO } from './constants'
 
 /**
  * oldestTS ~ latestTS の範囲のslackメッセージを取得する
@@ -52,5 +52,5 @@ export function notify (message) {
       })
     }
 
-    UrlFetchApp.fetch(POST_URL, options)
+    UrlFetchApp.fetch(SLACK_INFO.POST_URL, options)
 }
