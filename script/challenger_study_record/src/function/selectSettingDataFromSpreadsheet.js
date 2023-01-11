@@ -13,7 +13,8 @@ export function selectChallengerData () {
       name: setting[0],
       githubUserId: setting[1],
       slackUserId: setting[2],
-      isWebapp2: setting[3]
+      isWebapp: setting[3],
+      isWebapp2: setting[4]
     }
   })
 }

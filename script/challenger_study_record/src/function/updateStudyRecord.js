@@ -15,7 +15,7 @@ import {
 /**
  * 更新対象シートを更新する
  */
-export function updateChallengerRecord ({ name, githubUserId, slackUserId, lastTimeDate, thisTimeDate, lastTimeRange, thisTimeRange }) {
+export function updateChallengerRecord ({ name, githubUserId, slackUserId, lastTimeDate, thisTimeDate, lastTimeRange, thisTimeRange, isWebapp }) {
   // 各種シートからチャレンジャー名に紐づくデータを取得する
   const asPlannedData = selectAsPlannedData(name)
   const originalStudyData = selectOriginalStudyData(name)
@@ -47,7 +47,7 @@ export function updateChallengerRecord ({ name, githubUserId, slackUserId, lastT
   updateThisTimeValues[0][9] = Number(progressData.unixLinux)// UNIX/Linux
   updateThisTimeValues[0][10] = Number(progressData.npm)// npm
   updateThisTimeValues[0][11] = Number(progressData.webApp)// WebApp
-  updateThisTimeValues[0][12] = Number(progressVolumeData.resultPoint)// 実績残り課題数
+  updateThisTimeValues[0][12] = isWebapp ? Number(progressVolumeData.resultPoint) : '' // 実績残り課題数
 
   // 更新データをスプレッドシートに反映する
   thisTimeRange.setValues(updateThisTimeValues)

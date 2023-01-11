@@ -40,7 +40,7 @@ export default function updateChallengerRecordTrigger () {
       // 更新対象シートを更新する
       const githubUserId = challenger.githubUserId
       const slackUserId = challenger.slackUserId
-      updateChallengerRecord({ ...updateSheetData, githubUserId, slackUserId })
+      updateChallengerRecord({ ...updateSheetData, githubUserId, slackUserId, isWebapp: challenger.isWebapp })
 
       // Webアプリ開発2の学習記録更新対象者の場合のみ更新する
       if (challenger.isWebapp2) {

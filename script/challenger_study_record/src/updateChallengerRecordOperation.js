@@ -44,7 +44,8 @@ export default function updateChallengerRecordOperation () {
   // 更新対象シートを更新する
   const githubUserId = challengerData.find(challenger => challenger.name === updateSheetData.name).githubUserId
   const slackUserId = challengerData.find(challenger => challenger.name === updateSheetData.name).slackUserId
-  updateChallengerRecord({ ...updateSheetData, githubUserId, slackUserId })
+  const isWebapp = challengerData.find(challenger => challenger.name === updateSheetData.name).isWebapp
+  updateChallengerRecord({ ...updateSheetData, githubUserId, slackUserId, isWebapp })
 
   // Webアプリ開発2の学習記録更新対象者の場合のみ更新する
   const isWebapp2 = challengerData.find(challenger => challenger.name === updateSheetData.name).isWebapp2
