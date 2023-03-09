@@ -73,3 +73,5 @@
 
 ## ITS新入社員教育カリキュラム
 - https://docs.google.com/spreadsheets/d/1b4wyLE-P7hQFh1ZakeEJffkeCIM8sz--I7o_YiMLu6g/edit#gid=1630613457
+- [SQL入門-基礎編](https://docs.google.com/presentation/d/1-cxhw57pEUG5dNab42eI4Bu8AjBS2yFMWodtT8IjcH0/edit#slide=id.p)
+- [SQL入門-応用編](https://docs.google.com/presentation/d/1gql9482Ya7lXtWDoeA-ardk2E8eQMXh5NXgU5O2bg9U/edit#slide=id.p)
