@@ -1,12 +1,8 @@
 <template>
   <v-app id="app-root">
-    <v-app-bar
-      app
-      dark
-      color="primary"
-    >
+    <v-app-bar app dark color="primary">
       <v-toolbar-title>
-        書籍管理アプリ
+        書籍管理のぉ～アプリ（仮）
       </v-toolbar-title>
     </v-app-bar>
     <v-main>
