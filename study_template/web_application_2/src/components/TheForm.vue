@@ -13,23 +13,23 @@
           </v-col>
           <v-col cols="12">
             <v-label for="book-name" class="label_book">書籍名</v-label>
-            <v-text-field label="書籍名*" id="book-name" v-model="returnData.book" required></v-text-field>
+            <v-text-field label="本のなまえ*" id="book-name" v-model="returnData.book" required></v-text-field>
           </v-col>
           <v-col cols="12">
             <v-label for="category-name" class="label_category">ジャンル</v-label>
-            <v-select :items="['漫画', '小説', 'ビジネス', '趣味']" label="ジャンル*" id="category-name" v-model="returnData.category" required></v-select>
+            <v-select :items="['漫画', '小説', 'ビジネス', '趣味']" label="本のしゅるい" id="category-name" v-model="returnData.category" required></v-select>
           </v-col>
           <v-col cols="12">
-            <v-label for="buyer-name" class="label_buyer">買った人</v-label>
-            <v-text-field label="買った人*" id="buyer-name" v-model="returnData.buyer" required></v-text-field>
+            <v-label for="buyer-name" class="label_buyer">購入者</v-label>
+            <v-text-field label="買ったひと*" id="buyer-name" v-model="returnData.buyer" required></v-text-field>
           </v-col>
           <v-col cols="12">
-            <v-label for="boughtday" class="label_boughtday">ＵＲＬ</v-label>
-            <v-text-field label="買った日" id="boughtday" v-model="returnData.boughtday"></v-text-field>
+            <v-label for="boughtday" class="label_boughtday">購入日</v-label>
+            <v-text-field label="かった日" id="boughtday" v-model="returnData.boughtDay"></v-text-field>
           </v-col>
           <v-col cols="12">
             <v-label for="comment-name" class="label_comment">コメント</v-label>
-            <v-text-field label="コメント" id="comment-name" v-model="returnData.comment"></v-text-field>
+            <v-text-field label="ほんの感想" id="comment-name" v-model="returnData.comment"></v-text-field>
           </v-col>
         </v-row>
       </v-container>
@@ -49,7 +49,7 @@ export default {
     book: { type: String },
     category: { type: String },
     buyer: { type: String },
-    boughtday: { type: String },
+    boughtDay: { type: String },
     comment: { type: String }
   },
   data () {
@@ -58,7 +58,7 @@ export default {
         book: this.book,
         category: this.category,
         buyer: this.buyer,
-        boughtday: this.boughtday,
+        boughtDay: this.boughtDay,
         comment: this.comment
       }
     }
