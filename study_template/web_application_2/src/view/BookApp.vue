@@ -1,5 +1,6 @@
 <template>
-  <div class="wrap">
+  <!--  <div class="wrap"> -->
+  <div>
     検索<br>
     <div class="d-flex">
     <TheSearch />
@@ -65,7 +66,7 @@ export default {
    align-items: flex-start;
    min-height: 100vh;
    height: 150vh;
-   width: 370px;
+   width: 1500px;
    font-family: sans-serif;
   }
   #btn3 {

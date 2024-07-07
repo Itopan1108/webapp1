@@ -1,15 +1,16 @@
 <template>
-  <v-container fluid>
+  <v-container>
     <v-row>
       <v-col>
         <v-data-table
           :headers="headers"
           :items="items"
         >
-        <template>
+        <template v-slot:item.modify="{ item }">
           <v-btn
             small
             color="green"
+            @click="deleteItem(item)"
           >
             変更
           </v-btn>
@@ -95,7 +96,7 @@ export default {
   methods: {
     deleteItem (item) {
       const index = this.items.indexOf(item)
-      confirm('ほんとに削除しますか？？') && this.items.splice(index, 1)
+      this.items.splice(index, 1)
     }
   }
 }
