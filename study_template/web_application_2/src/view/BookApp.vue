@@ -1,5 +1,4 @@
 <template>
-  <!--  <div class="wrap"> -->
   <div>
     検索<br>
     <div class="d-flex">
@@ -60,15 +59,6 @@ export default {
 </script>
 
 <style>
-  .wrap {
-   display: flex;
-   flex-direction: column;
-   align-items: flex-start;
-   min-height: 100vh;
-   height: 150vh;
-   width: 1500px;
-   font-family: sans-serif;
-  }
   #btn3 {
   width: 100px;
   background-color: greenyellow;

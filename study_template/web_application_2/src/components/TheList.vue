@@ -101,25 +101,3 @@ export default {
   }
 }
 </script>
-<style scoped>
-#btn4,#btn6,#btn8 {
-  width: 50px;
-  background-color: greenyellow;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 8px;
-  margin: 10px;
-  border-radius: 3px;
-  }
-#btn5,#btn7,#btn9 {
-  width: 50px;
-  background-color: orange;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
-  padding: 8px;
-  margin: 10px;
-  border-radius: 3px;
-}
-</style>

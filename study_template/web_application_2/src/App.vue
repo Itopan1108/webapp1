@@ -1,6 +1,7 @@
 <template>
   <v-app id="app-root">
-    <v-app-bar app
+    <v-app-bar
+     app
      dark
      color="primary"
     >
