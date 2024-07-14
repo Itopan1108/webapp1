@@ -36,10 +36,6 @@ export default {
     return {
       headers: [
         {
-          text: 'ID',
-          value: 'id'
-        },
-        {
           text: '書籍名',
           value: 'book'
         },
@@ -68,21 +64,18 @@ export default {
       ],
       items: [
         {
-          id: '1',
           book: 'ワンピース',
           category: '漫画',
           buyer: 'いとう',
           boughtDay: '６月２２日'
         },
         {
-          id: '2',
           book: '吾輩は猫である',
           category: '小説',
           buyer: 'さとう',
           boughtDay: '５月１日'
         },
         {
-          id: '3',
           book: 'Vue.jsの本',
           category: 'ビジネス',
           buyer: 'おおたに',
