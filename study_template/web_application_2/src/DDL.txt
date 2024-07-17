@@ -1,0 +1,9 @@
+CREATE TABLE bookslist (
+  book_id        INTEGER NOT NULL,
+  book_name      DATE    NOT NULL,
+  book_category  VARCHAR NOT NULL,
+  book_buyer     VARCHAR NOT NULL,
+  book_buyday    DATE    NOT NULL,
+  book_comment   VARCHAR NOT NULL,
+  PRIMARY KEY (order_id),
+);
