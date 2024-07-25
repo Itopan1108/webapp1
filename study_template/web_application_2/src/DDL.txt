@@ -1,0 +1,9 @@
+CREATE TABLE bookslist (
+  book_id int auto_increment primary key,
+  book_name      VARCHAR NOT NULL,
+  category-name  VARCHAR NOT NULL,
+  buyer-name     VARCHAR NOT NULL,
+  boughtday      DATE    NOT NULL,
+  comment-name   VARCHAR NOT NULL,
+  PRIMARY KEY (book_id),
+);
